@@ -13,6 +13,7 @@
 		113023E728379B57006157D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113023E528379B57006157D1 /* Main.storyboard */; };
 		113023E928379B59006157D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 113023E828379B59006157D1 /* Assets.xcassets */; };
 		113023EC28379B59006157D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113023EA28379B59006157D1 /* LaunchScreen.storyboard */; };
+		113023F42837E020006157D1 /* circularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113023F32837E020006157D1 /* circularProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		113023E828379B59006157D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		113023EB28379B59006157D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		113023ED28379B59006157D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		113023F32837E020006157D1 /* circularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circularProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				113023E828379B59006157D1 /* Assets.xcassets */,
 				113023EA28379B59006157D1 /* LaunchScreen.storyboard */,
 				113023ED28379B59006157D1 /* Info.plist */,
+				113023F32837E020006157D1 /* circularProgressBarView.swift */,
 			);
 			path = "iOS6-HW12-Alexander.Strelkov";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				113023E428379B57006157D1 /* ViewController.swift in Sources */,
 				113023E028379B57006157D1 /* AppDelegate.swift in Sources */,
+				113023F42837E020006157D1 /* circularProgressBarView.swift in Sources */,
 				113023E228379B57006157D1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
