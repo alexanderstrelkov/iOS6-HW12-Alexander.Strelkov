@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CircularProgressBarView: UIView {
+class CircularProgressBarView: UIView, CAAnimationDelegate {
+    
+    
     private var circleLayer = CAShapeLayer()
     private var progressLayer = CAShapeLayer()
     
@@ -27,7 +29,7 @@ func createWorkCircularPath() {
         // ui edits
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.lineCap = .round
-        circleLayer.lineWidth = 20.0
+        circleLayer.lineWidth = 10.0
         circleLayer.strokeEnd = 1.0
         circleLayer.strokeColor = UIColor.white.cgColor
         // added circleLayer to layer
@@ -52,7 +54,7 @@ func createWorkCircularPath() {
             // ui edits
             circleLayer.fillColor = UIColor.clear.cgColor
             circleLayer.lineCap = .round
-            circleLayer.lineWidth = 20.0
+            circleLayer.lineWidth = 10.0
             circleLayer.strokeEnd = 1.0
             circleLayer.strokeColor = UIColor.white.cgColor
             // added circleLayer to layer
@@ -73,12 +75,38 @@ func createWorkCircularPath() {
         // created circularProgressAnimation with keyPath
         let circularProgressAnimation = CABasicAnimation(keyPath: "strokeEnd")
         // set the end time
+        circularProgressAnimation.fromValue = 0
+        circularProgressAnimation.toValue = 1
         circularProgressAnimation.duration = duration
-        circularProgressAnimation.toValue = 1.0
         circularProgressAnimation.fillMode = .forwards
         circularProgressAnimation.isRemovedOnCompletion = false
         progressLayer.add(circularProgressAnimation, forKey: "progressAnim")
     }
+    
+    func resumeAnimation() {
+        let pausedTime = progressLayer.timeOffset
+        progressLayer.speed = 1.0
+        progressLayer.timeOffset = 0.0
+        progressLayer.beginTime = 0.0
+        let timeSincePaused = progressLayer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        progressLayer.beginTime = timeSincePaused
+    }
+    
+    func pauseAnimation() {
+        let pausedTime = progressLayer.convertTime(CACurrentMediaTime(), from: nil)
+        progressLayer.speed = 0.0
+        progressLayer.timeOffset = pausedTime
+        
+    }
+    
+    func stopAnimation() {
+        progressLayer.speed = 1.0
+        progressLayer.timeOffset = 0.0
+        progressLayer.beginTime = 0.0
+        progressLayer.strokeEnd = 0.0
+        progressLayer.removeAllAnimations()
+    }
+    
 }
 
 

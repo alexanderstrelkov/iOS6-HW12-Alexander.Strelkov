@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,12 +58,22 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbH-ue-VdO">
+                                <rect key="frame" x="176.5" y="781" width="61" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Reset"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l5j-b2-KfL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="MbH-ue-VdO" secondAttribute="bottom" constant="50" id="MoC-Xd-zLU"/>
                             <constraint firstItem="WBd-Ji-eyX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UIt-Ax-SKm"/>
                             <constraint firstItem="WBd-Ji-eyX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VMy-ml-W4o"/>
+                            <constraint firstItem="MbH-ue-VdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mwr-W4-nkC"/>
                             <constraint firstItem="tlZ-rw-F1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nbW-hg-uqn"/>
                             <constraint firstItem="tlZ-rw-F1T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="rrl-qy-Kpy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tlZ-rw-F1T" secondAttribute="trailing" constant="30" id="vUN-t4-AaL"/>
@@ -72,6 +81,8 @@
                     </view>
                     <connections>
                         <outlet property="animatingTimerLabel" destination="iwg-3g-U3A" id="b36-3m-1Bz"/>
+                        <outlet property="cancelButton" destination="MbH-ue-VdO" id="m1Y-7f-AEY"/>
+                        <outlet property="playPauseButton" destination="7TL-fe-k1k" id="GQK-FZ-YxQ"/>
                         <outlet property="relaxButtonLabel" destination="UMp-K8-REn" id="CjP-kb-gaZ"/>
                         <outlet property="workButtonLabel" destination="adw-GV-T2d" id="v7m-gl-LhI"/>
                     </connections>
@@ -83,8 +94,5 @@
     </scenes>
     <resources>
         <image name="play" catalog="system" width="120" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
