@@ -85,6 +85,7 @@ class ViewController: UIViewController {
             cancelButton.alpha = 0.5
             timer.invalidate()
             secondsRemaining = Durations.relaxTime
+    
             isStarted = false
             isWorkTime = false
             isAnimationStarted = false
@@ -114,7 +115,13 @@ class ViewController: UIViewController {
         // align to the center of the screen
         circularProgressBarView.center = view.center
         // call the animation with circularViewDuration
-        circularProgressBarView.createCircularPath()
+        if isWorkTime {
+            circularProgressBarView.createCircularPath()
+        } else {
+            circularProgressBarView.createRelaxCircularPath()
+        }
+        //        circularProgressBarView.createCircularPath()
+        
         circularProgressBarView.progressAnimation(duration: secondsRemaining)
         isAnimationStarted = true
         // add this view to the view controller
@@ -124,8 +131,8 @@ class ViewController: UIViewController {
 
 extension ViewController {
     enum Durations {
-        static let workTime = 1500.0
-        static let relaxTime = 300.0
+        static let workTime = 5.0
+        static let relaxTime = 3.0
     }
 }
 
