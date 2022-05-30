@@ -37,33 +37,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="tlZ-rw-F1T">
-                                <rect key="frame" x="30" y="85" width="354" height="84"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adw-GV-T2d">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Work"/>
-                                        <connections>
-                                            <action selector="workButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B48-av-pQ5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMp-K8-REn">
-                                        <rect key="frame" x="0.0" y="53" width="354" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Relax"/>
-                                        <connections>
-                                            <action selector="relaxButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H0R-us-Wlk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbH-ue-VdO">
-                                <rect key="frame" x="176.5" y="781" width="61" height="31"/>
+                                <rect key="frame" x="173" y="781" width="68.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l5j-b2-KfL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf5-yk-6Mc">
+                                <rect key="frame" x="177" y="728" width="61" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Reset"/>
                                 <connections>
-                                    <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l5j-b2-KfL"/>
+                                    <action selector="cancelButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n67-5O-xsZ"/>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eld-r2-O1a"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,17 +62,16 @@
                             <constraint firstItem="WBd-Ji-eyX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UIt-Ax-SKm"/>
                             <constraint firstItem="WBd-Ji-eyX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VMy-ml-W4o"/>
                             <constraint firstItem="MbH-ue-VdO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mwr-W4-nkC"/>
-                            <constraint firstItem="tlZ-rw-F1T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nbW-hg-uqn"/>
-                            <constraint firstItem="tlZ-rw-F1T" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="rrl-qy-Kpy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tlZ-rw-F1T" secondAttribute="trailing" constant="30" id="vUN-t4-AaL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qf5-yk-6Mc" secondAttribute="trailing" constant="176" id="qOv-qb-xDY"/>
+                            <constraint firstItem="MbH-ue-VdO" firstAttribute="top" secondItem="qf5-yk-6Mc" secondAttribute="bottom" constant="22" id="wvt-V5-1X2"/>
+                            <constraint firstItem="qf5-yk-6Mc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="177" id="zFs-Pc-N7U"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="animatingTimerLabel" destination="iwg-3g-U3A" id="b36-3m-1Bz"/>
                         <outlet property="cancelButton" destination="MbH-ue-VdO" id="m1Y-7f-AEY"/>
                         <outlet property="playPauseButton" destination="7TL-fe-k1k" id="GQK-FZ-YxQ"/>
-                        <outlet property="relaxButtonLabel" destination="UMp-K8-REn" id="CjP-kb-gaZ"/>
-                        <outlet property="workButtonLabel" destination="adw-GV-T2d" id="v7m-gl-LhI"/>
+                        <outlet property="resetButton" destination="qf5-yk-6Mc" id="d2B-UI-bpO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
